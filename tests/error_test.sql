@@ -1,0 +1,5 @@
+insert into order values(0, 0, 'Q', 924504, 'Clerk#2395', 'NOHUZUGIIRQHCCZPAXCGN20');
+insert into orders (0, 0, 'Q', 924504, 'Clerk#2395', 'NOHUZUGIIRQHCCZPAXCGN20');
+insert into orders values(0, 'Q', 924504, 'Clerk#2395', 'NOHUZUGIIRQHCCZPAXCGN20');
+
+insert into orders values(0, 0, 'Q', 924504, 'Clerk#2395', '01234567890123456789012345678901234567890123456789012345678901234567890123456789');

@@ -1,0 +1,85 @@
+execfile test.sql;
+filename is test.sql
+running  create table student ( 	sno char(8), 	sname char(16) unique, 	sage int, 	sgender char(1), 	score float, 	primary key ( sno ) );
+command execute successfully
+running    delete from student;
+command execute successfully
+running  insert into student values ('12345678',	'wy1',22,'M',95);
+command execute successfully
+running  insert into student values ('12345679',	'wy2',19,'F',100);
+command execute successfully
+running  create index stunameidx on student ( sname );
+command execute successfully
+running  insert into student values ('12345682',	'wy5',14,'M',60);
+command execute successfully
+running  insert into student values ('12345684',	'wy6',25,'F',63);
+command execute successfully
+running  select * from student;
+sno      sname            sage      sgender score     
+--------------------------
+12345678 wy1              22        M       95.000000 
+12345679 wy2              19        F       100.000000
+12345682 wy5              14        M       60.000000 
+12345684 wy6              25        F       63.000000 
+-------------------------- 4 records seleted
+command execute successfully
+running  select * from student where sno = '12345679';
+sno      sname            sage      sgender score     
+--------------------------
+12345679 wy2              19        F       100.000000
+--------------------------1 records selected
+command execute successfully
+running  select * from student where score >= 90 and score <=95;
+sno      sname            sage      sgender score     
+--------------------------
+12345678 wy1              22        M       95.000000 
+--------------------------1 records selected
+command execute successfully
+running  select * from student where score > 60 and score <65;
+sno      sname            sage      sgender score     
+--------------------------
+12345684 wy6              25        F       63.000000 
+--------------------------1 records selected
+command execute successfully
+running  select * from student where score >= 98;
+sno      sname            sage      sgender score     
+--------------------------
+12345679 wy2              19        F       100.000000
+--------------------------1 records selected
+command execute successfully
+running  select * from student where sage > 20 and sgender = 'F';
+sno      sname            sage      sgender score     
+--------------------------
+12345684 wy6              25        F       63.000000 
+--------------------------1 records selected
+command execute successfully
+running  delete from student where sno = '12345678';
+1 records deleted
+command execute successfully
+running  delete from student where sname = 'wy2';
+1 records deleted
+command execute successfully
+running  select * from student;
+sno      sname            sage      sgender score     
+--------------------------
+12345682 wy5              14        M       60.000000 
+12345684 wy6              25        F       63.000000 
+-------------------------- 2 records seleted
+command execute successfully
+running  insert into student values ('12345681',	'wy4',23,'F',96);
+command execute successfully
+running  insert into student values ('12345670',	'wy3',25,'M',0);
+command execute successfully
+running  select * from student where score < 10;
+sno      sname            sage      sgender score     
+--------------------------
+12345670 wy3              25        M       0.000000  
+--------------------------1 records selected
+command execute successfully
+running  select * from student where sgender <> 'F';
+sno      sname            sage      sgender score     
+--------------------------
+12345670 wy3              25        M       0.000000  
+12345682 wy5              14        M       60.000000 
+--------------------------2 records selected
+command execute successfully
